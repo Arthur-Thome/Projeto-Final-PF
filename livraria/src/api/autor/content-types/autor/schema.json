@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "autors",
+  "info": {
+    "singularName": "autor",
+    "pluralName": "autors",
+    "displayName": "Autor"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "livro": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::livro.livro",
+      "inversedBy": "autors"
+    }
+  }
+}

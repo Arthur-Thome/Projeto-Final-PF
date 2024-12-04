@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "livros",
+  "info": {
+    "singularName": "livro",
+    "pluralName": "livros",
+    "displayName": "Livro"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "autor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "livros"
+    },
+    "ano_de_publicacao": {
+      "type": "integer"
+    },
+    "genero": {
+      "type": "string"
+    },
+    "autors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::autor.autor",
+      "mappedBy": "livro"
+    }
+  }
+}
